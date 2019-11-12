@@ -25,9 +25,9 @@ namespace BlueGeeks.Models
 		public virtual String FirstName { get; set; }
 		[Required]
 		public virtual String LastName { get; set; }
-
+		[Required]
 		public virtual String Position { get; set; }
-
+		[Required]
 		public virtual short JerseyNumber { get; set; }
 
 		public virtual int TeamId { get; set; }
