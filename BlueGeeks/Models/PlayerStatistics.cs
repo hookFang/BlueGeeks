@@ -26,11 +26,11 @@ namespace BlueGeeks.Models
 
             [Key]
             public virtual int Player_Statistics_Id { get; set; }
-            [Required]
+            
             public virtual float FgPercent { get; set; }
-            [Required]
+            
             public virtual float FtPercent { get; set; }
-            [Required]
+            
             public virtual short ThreePointersMade { get; set; }
             public virtual short PointsMade { get; set; }
             public virtual short Rebounds { get; set; }
@@ -38,6 +38,9 @@ namespace BlueGeeks.Models
             public virtual short Steals { get; set; }
             public virtual short Blocks { get; set; }
             public virtual short TurnOvers { get; set; }
+            public virtual int Player_Id{ get; set; }
+
+            public virtual Player PlayerId { get; set; }
         }
     }
 }
