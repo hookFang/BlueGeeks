@@ -28,8 +28,8 @@ namespace BlueGeeks.Models
         [Required]
         public virtual DateTime MatchDate { get; set; }
         public virtual int AwayTeam_Id { get; set; }
-        public virtual Teams AwayTeam { get; set; }
+        public virtual Teams TeamAway{ get; set; }
         public virtual int Stadium_Id { get; set; }
-        public virtual Stadium HomeTeam { get; set; }
+        public virtual Stadium TeamHome { get; set; }
     }
 }
