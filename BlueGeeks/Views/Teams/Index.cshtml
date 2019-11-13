@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BlueGeeks.Models.Teams>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Team_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Team_Mascot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ties)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Win_Streak)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team_Mascot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Conference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ties)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Win_Streak)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Team_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Team_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Team_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
