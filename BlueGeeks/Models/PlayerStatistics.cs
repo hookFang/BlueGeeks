@@ -8,10 +8,8 @@ namespace BlueGeeks.Models
 {
     public class PlayerStatistics
     {
-        public class Teams
-        {
-            public Teams() { }
-            public Teams(int Player_Statistics_Id, float FgPercent, float FtPercent, short ThreePointersMade, short PointsMade, short Rebounds, short Assists, short Steals, short Blocks, short TurnOvers)
+            public PlayerStatistics() { }
+            public PlayerStatistics(int Player_Statistics_Id, float FgPercent, float FtPercent, short ThreePointersMade, short PointsMade, short Rebounds, short Assists, short Steals, short Blocks, short TurnOvers)
             {
                 this.Player_Statistics_Id = Player_Statistics_Id;
                 this.FgPercent = FgPercent;
@@ -39,9 +37,9 @@ namespace BlueGeeks.Models
             public virtual short Steals { get; set; }
             public virtual short Blocks { get; set; }
             public virtual short TurnOvers { get; set; }
-            public virtual int Player_Id{ get; set; }
 
+            public virtual int Player_Id{ get; set; }
             public virtual Player PlayerId { get; set; }
-        }
+        
     }
 }
