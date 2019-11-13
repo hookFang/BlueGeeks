@@ -46,7 +46,8 @@ namespace BlueGeeks.Controllers
         // GET: Players/Create
         public IActionResult Create()
         {
-            return View();
+			ViewData["TeamId"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+			return View();
         }
 
         // POST: Players/Create
@@ -62,7 +63,8 @@ namespace BlueGeeks.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(player);
+			ViewData["TeamId"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+			return View(player);
         }
 
         // GET: Players/Edit/5
