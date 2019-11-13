@@ -1,0 +1,89 @@
+﻿@model IEnumerable<BlueGeeks.Models.PlayerStatistics>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FgPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FtPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreePointersMade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PointsMade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rebounds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assists)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Steals)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blocks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TurnOvers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player_Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FgPercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FtPercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThreePointersMade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PointsMade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rebounds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assists)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Steals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blocks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TurnOvers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player_Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Player_Statistics_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Player_Statistics_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Player_Statistics_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
