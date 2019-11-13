@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using BlueGeeks.Models;
 
 namespace BlueGeeks.Data
 {
@@ -12,5 +13,7 @@ namespace BlueGeeks.Data
 			: base(options)
 		{
 		}
+		public DbSet<BlueGeeks.Models.Coaches> Coaches { get; set; }
+		public DbSet<BlueGeeks.Models.Matches> Matches { get; set; }
 	}
 }
