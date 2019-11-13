@@ -17,5 +17,7 @@ namespace BlueGeeks.Data
 		public DbSet<BlueGeeks.Models.Matches> Matches { get; set; }
 		public DbSet<BlueGeeks.Models.Player> Player { get; set; }
 		public DbSet<BlueGeeks.Models.PlayerStatistics> PlayerStatistics { get; set; }
+		public DbSet<BlueGeeks.Models.Stadium> Stadium { get; set; }
+		public DbSet<BlueGeeks.Models.Teams> Teams { get; set; }
 	}
 }

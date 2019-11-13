@@ -1,0 +1,63 @@
+﻿@model BlueGeeks.Models.Teams
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Teams</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Team_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Team_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Team_Mascot)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Team_Mascot)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conference)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conference)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Wins)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Wins)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Loses)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Loses)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ties)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ties)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Win_Streak)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Win_Streak)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Team_Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
