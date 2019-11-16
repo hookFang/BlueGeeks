@@ -46,6 +46,9 @@ namespace BlueGeeks.Controllers
         // GET: Matches/Create
         public IActionResult Create()
         {
+            ViewData["HomeTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["AwayTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["Stadium_Id"] = new SelectList(_context.Set<Stadium>(), "Stadium_Id", "StadiumName");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace BlueGeeks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Matche_Id,HomeTeam,AwayTeam,MatchDate,AwayTeam_Id,Stadium_Id")] Matches matches)
+        public async Task<IActionResult> Create([Bind("Matche_Id,HomeTeam_Id,AwayTeam_Id,MatchDate,Stadium_Id")] Matches matches)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,9 @@ namespace BlueGeeks.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["HomeTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["AwayTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["Stadium_Id"] = new SelectList(_context.Set<Stadium>(), "Stadium_Id", "StadiumName");
             return View(matches);
         }
 
@@ -78,6 +84,9 @@ namespace BlueGeeks.Controllers
             {
                 return NotFound();
             }
+            ViewData["HomeTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["AwayTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["Stadium_Id"] = new SelectList(_context.Set<Stadium>(), "Stadium_Id", "StadiumName");
             return View(matches);
         }
 
@@ -86,7 +95,7 @@ namespace BlueGeeks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Matche_Id,HomeTeam,AwayTeam,MatchDate,AwayTeam_Id,Stadium_Id")] Matches matches)
+        public async Task<IActionResult> Edit(int id, [Bind("Matche_Id,HomeTeam_Id,AwayTeam_Id,MatchDate,Stadium_Id")] Matches matches)
         {
             if (id != matches.Matche_Id)
             {
@@ -113,6 +122,9 @@ namespace BlueGeeks.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["HomeTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["AwayTeam_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
+            ViewData["Stadium_Id"] = new SelectList(_context.Set<Stadium>(), "Stadium_Id", "StadiumName");
             return View(matches);
         }
 
