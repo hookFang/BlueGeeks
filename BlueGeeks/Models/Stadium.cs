@@ -20,10 +20,13 @@ namespace BlueGeeks.Models
         [Key]
         public virtual int Stadium_Id { get; set; }
         [Required]
-        public virtual String StadiumName { get; set; }
+		[Display(Name = "Stadium Name")]
+		public virtual String StadiumName { get; set; }
         [Required]
-        public virtual String City { get; set; }
-        public virtual int Team_Id { get; set; }
+		[Display(Name = "Location")]
+		public virtual String City { get; set; }
+		[Display(Name = "Team Name")]
+		public virtual int Team_Id { get; set; }
         public virtual Teams Team { get; set; }
     }
 
