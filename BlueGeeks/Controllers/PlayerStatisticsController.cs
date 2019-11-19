@@ -46,6 +46,7 @@ namespace BlueGeeks.Controllers
         // GET: PlayerStatistics/Create
         public IActionResult Create()
         {
+            ViewData["Player_Id"] = new SelectList(_context.Set<Player>(), "Player_Id", "FirstName");
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace BlueGeeks.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Player_Id"] = new SelectList(_context.Set<Player>(), "Player_Id", "FirstName");
             return View(playerStatistics);
         }
 
@@ -78,6 +80,7 @@ namespace BlueGeeks.Controllers
             {
                 return NotFound();
             }
+            ViewData["Player_Id"] = new SelectList(_context.Set<Player>(), "Player_Id", "FirstName");
             return View(playerStatistics);
         }
 
@@ -113,6 +116,7 @@ namespace BlueGeeks.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Player_Id"] = new SelectList(_context.Set<Player>(), "Player_Id", "FirstName");
             return View(playerStatistics);
         }
 

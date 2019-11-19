@@ -10,25 +10,22 @@ namespace BlueGeeks.Models
     {
 
         public Matches() { }
-        public Matches(int Matche_Id, String HomeTeam, String AwayTeam, DateTime MatchDate)
+        public Matches(int Matche_Id, DateTime MatchDate)
         {
             this.Matche_Id = Matche_Id;
-            this.HomeTeam = HomeTeam;
-            this.AwayTeam = AwayTeam;
             this.MatchDate = MatchDate;
-
         }
 
         [Key]
         public virtual int Matche_Id { get; set; }
         [Required]
-        public virtual String HomeTeam { get; set; }
+        public virtual int HomeTeam_Id { get; set; }
+        public virtual Teams HomeTeam { get; set; }
         [Required]
-        public virtual String AwayTeam { get; set; }
+        public virtual int AwayTeam_Id { get; set; }
+        public virtual Teams AwayTeam { get; set; }
         [Required]
         public virtual DateTime MatchDate { get; set; }
-        public virtual int AwayTeam_Id { get; set; }
-        public virtual Teams TeamAway{ get; set; }
         public virtual int Stadium_Id { get; set; }
         public virtual Stadium TeamHome { get; set; }
     }

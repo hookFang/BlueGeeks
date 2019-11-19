@@ -22,7 +22,8 @@ namespace BlueGeeks.Controllers
         // GET: Players
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Player.ToListAsync());
+            var playerContext = _context.Player.Include(p => p.PlayerTeam);
+            return View(await playerContext.ToListAsync());
         }
 
         // GET: Players/Details/5
@@ -39,7 +40,6 @@ namespace BlueGeeks.Controllers
             {
                 return NotFound();
             }
-
             return View(player);
         }
 
@@ -80,6 +80,7 @@ namespace BlueGeeks.Controllers
             {
                 return NotFound();
             }
+            ViewData["TeamId"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
             return View(player);
         }
 
@@ -115,6 +116,7 @@ namespace BlueGeeks.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TeamId"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
             return View(player);
         }
 

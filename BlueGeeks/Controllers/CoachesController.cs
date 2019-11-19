@@ -46,6 +46,7 @@ namespace BlueGeeks.Controllers
         // GET: Coaches/Create
         public IActionResult Create()
         {
+            ViewData["Team_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace BlueGeeks.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Team_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
             return View(coaches);
         }
 
@@ -78,6 +80,7 @@ namespace BlueGeeks.Controllers
             {
                 return NotFound();
             }
+            ViewData["Team_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
             return View(coaches);
         }
 
@@ -113,6 +116,7 @@ namespace BlueGeeks.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Team_Id"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
             return View(coaches);
         }
 
