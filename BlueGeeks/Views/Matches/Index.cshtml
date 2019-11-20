@@ -31,16 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.HomeTeam_Id)
+                @Html.DisplayFor(modelItem => item.HomeTeam_.Team_Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AwayTeam_Id)
+                @Html.DisplayFor(modelItem => item.AwayTeam_.Team_Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MatchDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Stadium_Id)
+                @Html.DisplayFor(modelItem => item.Stadium_.StadiumName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Matche_Id">Edit</a> |

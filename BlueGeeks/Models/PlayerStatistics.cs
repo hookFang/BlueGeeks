@@ -39,7 +39,7 @@ namespace BlueGeeks.Models
             public virtual short TurnOvers { get; set; }
 
             public virtual int Player_Id{ get; set; }
-            public virtual Player PlayerId { get; set; }
+            public virtual Player Player_ { get; set; }
         
     }
 }

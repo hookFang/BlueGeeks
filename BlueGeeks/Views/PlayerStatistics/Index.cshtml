@@ -40,7 +40,7 @@
                 @Html.DisplayNameFor(model => model.TurnOvers)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player_Id)
+                @Html.DisplayNameFor(model => model.Player_)
             </th>
             <th></th>
         </tr>
@@ -76,7 +76,7 @@
                 @Html.DisplayFor(modelItem => item.TurnOvers)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Player_Id)
+                @Html.DisplayFor(modelItem => item.Player_.FirstName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Player_Statistics_Id">Edit</a> |

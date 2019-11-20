@@ -22,7 +22,8 @@ namespace BlueGeeks.Controllers
         // GET: PlayerStatistics
         public async Task<IActionResult> Index()
         {
-            return View(await _context.PlayerStatistics.ToListAsync());
+            var playerStatisticsContext = _context.PlayerStatistics.Include(p => p.Player_);
+            return View(await playerStatisticsContext.ToListAsync());
         }
 
         // GET: PlayerStatistics/Details/5
@@ -34,6 +35,7 @@ namespace BlueGeeks.Controllers
             }
 
             var playerStatistics = await _context.PlayerStatistics
+                .Include(x => x.Player_)
                 .FirstOrDefaultAsync(m => m.Player_Statistics_Id == id);
             if (playerStatistics == null)
             {

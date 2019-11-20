@@ -28,7 +28,7 @@ namespace BlueGeeks.Models
         [Required]
         public virtual String Title { get; set; }
         public virtual int Team_Id { get; set; }
-        public virtual Teams Team { get; set; }
+        public virtual Teams Team_ { get; set; }
     }
 }
 
