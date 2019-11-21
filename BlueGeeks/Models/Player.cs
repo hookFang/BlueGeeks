@@ -32,7 +32,7 @@ namespace BlueGeeks.Models
 
 		public virtual int TeamId { get; set; }
 		
-		public virtual Teams PlayerTeam { get; set; }
+		public virtual Teams Team { get; set; }
 
 	}
 }

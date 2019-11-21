@@ -27,7 +27,7 @@ namespace BlueGeeks.Models
 		public virtual String City { get; set; }
 		[Display(Name = "Team Name")]
 		public virtual int Team_Id { get; set; }
-        public virtual Teams Team { get; set; }
+        public virtual Teams Team_ { get; set; }
     }
 
 

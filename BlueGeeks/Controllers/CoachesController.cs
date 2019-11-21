@@ -22,7 +22,8 @@ namespace BlueGeeks.Controllers
         // GET: Coaches
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Coaches.ToListAsync());
+            var coachesContext = _context.Coaches.Include(p => p.Team_);
+            return View(await coachesContext.ToListAsync());
         }
 
         // GET: Coaches/Details/5
@@ -34,6 +35,7 @@ namespace BlueGeeks.Controllers
             }
 
             var coaches = await _context.Coaches
+                .Include(x => x.Team_)
                 .FirstOrDefaultAsync(m => m.Coaches_Id == id);
             if (coaches == null)
             {

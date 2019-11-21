@@ -22,7 +22,8 @@ namespace BlueGeeks.Controllers
         // GET: Matches
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Matches.ToListAsync());
+            var matchesContext = _context.Matches.Include(p => p.HomeTeam_).Include(x => x.AwayTeam_).Include(c => c.Stadium_);
+            return View(await matchesContext.ToListAsync());
         }
 
         // GET: Matches/Details/5
@@ -34,6 +35,9 @@ namespace BlueGeeks.Controllers
             }
 
             var matches = await _context.Matches
+                .Include(p => p.HomeTeam_)
+                .Include(x => x.AwayTeam_)
+                .Include(c => c.Stadium_)
                 .FirstOrDefaultAsync(m => m.Matche_Id == id);
             if (matches == null)
             {
