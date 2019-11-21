@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlueGeeks.Data;
 using BlueGeeks.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BlueGeeks.Controllers
 {
@@ -44,8 +45,9 @@ namespace BlueGeeks.Controllers
             return View(player);
         }
 
-        // GET: Players/Create
-        public IActionResult Create()
+		// GET: Players/Create
+		[Authorize(Roles = "Admin")]
+		public IActionResult Create()
         {
 			ViewData["TeamId"] = new SelectList(_context.Set<Teams>(), "Team_Id", "Team_Name");
 			return View();
@@ -56,7 +58,7 @@ namespace BlueGeeks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Player_Id,FirstName,LastName,Position,JerseyNumber,TeamId")] Player player)
+		public async Task<IActionResult> Create([Bind("Player_Id,FirstName,LastName,Position,JerseyNumber,TeamId")] Player player)
         {
             if (ModelState.IsValid)
             {
