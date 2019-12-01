@@ -70,6 +70,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+  color: white;
   white-space: nowrap;
   /*line-height: 100px; /* Vertically center the text there */
   padding-top: 20px;
