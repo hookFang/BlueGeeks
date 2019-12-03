@@ -314,6 +314,27 @@ namespace BlueGeeksTest
 			Assert.Equal(coach, model);
 		}
 
+		/*Test if Create Button works*/
+		[Fact]
+		public async void CreateButtonTest()
+		{
+			//Arrange           
+			var db = MockDb.CreateMockDb();
+			var c = new CoachesController(db);
+
+			var coach = new Coaches { Coaches_Id = 2, FirstName = "Edwin", LastName = "Mar", Title = "Head", Team_Id = 2 };
+
+			//Act
+			await c.Create(coach);
+
+			var r = c.Create();
+
+			//Assert
+			Assert.IsType<ViewResult>(r);
+
+		}
+
+
 		/*Test for DB concurrency in edit
 		[Fact]
 		public async void EditDbConcurrencyErrorTest()
