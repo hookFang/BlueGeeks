@@ -3,53 +3,74 @@
 @{
     ViewData["Title"] = "Index";
 }
-    <div id="Ajax">
-        <h1>Index</h1>
+<div id="Ajax">
+    <h1>Index</h1>
 
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
         <p>
             <a asp-action="Create" method="post" data-ajax="true" data-ajax-method="POST" data-ajax-update="#Ajax">Create New</a>
         </p>
-        <table class="table">
-            <thead>
+    }
+
+
+    <table class="table" id="matches">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HomeTeam_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AwayTeam_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stadium_Id)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.HomeTeam_Id)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.AwayTeam_Id)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.MatchDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Stadium_Id)
-                    </th>
-                    <th></th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomeTeam_.Team_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AwayTeam_.Team_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stadium_.StadiumName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Matche_Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Matche_Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Matche_Id">Delete</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.HomeTeam_.Team_Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.AwayTeam_.Team_Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MatchDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Stadium_.StadiumName)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Matche_Id">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.Matche_Id">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Matche_Id">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            var table = $("#matches").DataTable({
+                'bPaginate': false,
+            });
+            $('div.dataTables_filter label').addClass('control-label');
+            $('div.dataTables_filter input').addClass('form-control');
+        });
+    </script>
+}

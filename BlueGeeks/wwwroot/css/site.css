@@ -93,3 +93,15 @@ body {
 	left: 75%;
     height: 10px !important;
 }
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: darkgray
+}
+
+tbody {
+    background-color: white
+}
