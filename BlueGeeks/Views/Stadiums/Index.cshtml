@@ -1,49 +1,67 @@
 ﻿@model IEnumerable<BlueGeeks.Models.Stadium>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Stadium";
 }
-    <div id="Ajax">
-        <h1>Index</h1>
+<div id="Ajax">
+    <h1>Stadium</h1>
 
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
         <p>
             <a asp-action="Create" method="post" data-ajax="true" data-ajax-method="POST" data-ajax-update="#Ajax">Create New</a>
         </p>
-        <table class="table">
-            <thead>
+    }
+
+    <table class="table" id="stadium">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StadiumName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Team_)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.StadiumName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.City)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Team_)
-                    </th>
-                    <th></th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StadiumName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Team_.Team_Name)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Stadium_Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Stadium_Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Stadium_Id">Delete</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StadiumName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.City)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Team_.Team_Name)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Stadium_Id">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.Stadium_Id">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Stadium_Id">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            var table = $("#stadium").DataTable({
+                "bPaginate": false,
+            });
+            $('div.dataTables_filter label').addClass('control-label');
+            $('div.dataTables_filter input').addClass('form-control');
+        });
+    </script>
+}
