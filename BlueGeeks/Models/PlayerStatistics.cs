@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BlueGeeks.Models
@@ -39,6 +40,8 @@ namespace BlueGeeks.Models
             public virtual short TurnOvers { get; set; }
 
             public virtual int Player_Id{ get; set; }
+
+            [JsonIgnore]
             public virtual Player Player_ { get; set; }
         
     }

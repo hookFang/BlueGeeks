@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BlueGeeks.Models
@@ -27,7 +28,9 @@ namespace BlueGeeks.Models
         public virtual String LastName { get; set; }
         [Required]
         public virtual String Title { get; set; }
+        
         public virtual int Team_Id { get; set; }
+        [JsonIgnore]
         public virtual Teams Team_ { get; set; }
     }
 }

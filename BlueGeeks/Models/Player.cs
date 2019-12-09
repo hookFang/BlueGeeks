@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BlueGeeks.Models
@@ -31,8 +32,9 @@ namespace BlueGeeks.Models
 		public virtual short JerseyNumber { get; set; }
 
 		public virtual int TeamId { get; set; }
-		
-		public virtual Teams Team { get; set; }
+
+        [JsonIgnore]
+        public virtual Teams Team { get; set; }
 
 	}
 }
