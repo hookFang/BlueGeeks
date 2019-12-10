@@ -20,16 +20,20 @@ namespace BlueGeeks.Models
         [Key]
         public virtual int Matche_Id { get; set; }
         [Required]
-        public virtual int HomeTeam_Id { get; set; }
+		[Display(Name = "Home Team")]
+		public virtual int HomeTeam_Id { get; set; }
         [JsonIgnore]
         public virtual Teams HomeTeam_ { get; set; }
         [Required]
-        public virtual int AwayTeam_Id { get; set; }
+		[Display(Name = "Away Team")]
+		public virtual int AwayTeam_Id { get; set; }
         [JsonIgnore]
         public virtual Teams AwayTeam_ { get; set; }
         [Required]
-        public virtual DateTime MatchDate { get; set; }
-        public virtual int Stadium_Id { get; set; }
+		[Display(Name = "Match Date")]
+		public virtual DateTime MatchDate { get; set; }
+		[Display(Name = "Stadium")]
+		public virtual int Stadium_Id { get; set; }
         [JsonIgnore]
         public virtual Stadium Stadium_ { get; set; }
     }

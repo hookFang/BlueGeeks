@@ -26,10 +26,10 @@ namespace BlueGeeks.Models
         [Required]
 		[Display(Name = "Location")]
 		public virtual String City { get; set; }
-		[Display(Name = "Team Name")]
 		public virtual int Team_Id { get; set; }
         [JsonIgnore]
-        public virtual Teams Team_ { get; set; }
+		[Display(Name = "Team Name")]
+		public virtual Teams Team_ { get; set; }
     }
 
 

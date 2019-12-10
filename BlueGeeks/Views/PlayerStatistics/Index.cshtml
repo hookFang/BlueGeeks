@@ -16,40 +16,41 @@
 
     <table class="table" id="playerstatistics">
         <thead>
-            <tr>
-                <th>
-                        Player Name
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FgPercent)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FtPercent)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ThreePointersMade)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PointsMade)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Rebounds)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Assists)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Steals)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Blocks)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TurnOvers)
-                </th>
-
-                <th></th>
-            </tr>
+			<tr>
+				<th>
+					Player Name
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.FgPercent)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.FtPercent)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.ThreePointersMade)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.PointsMade)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Rebounds)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Assists)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Steals)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Blocks)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.TurnOvers)
+				</th>
+				<th>
+					Options
+				</th>
+			</tr>
         </thead>
         <tbody>
             @foreach (var item in Model)

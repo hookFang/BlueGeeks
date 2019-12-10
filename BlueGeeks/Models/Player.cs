@@ -23,18 +23,23 @@ namespace BlueGeeks.Models
 		[Key]
 		public virtual int Player_Id { get; set; }
 		[Required]
+		[Display(Name = "First Name")]
 		public virtual String FirstName { get; set; }
 		[Required]
+		[Display(Name = "Last Name")]
 		public virtual String LastName { get; set; }
 		[Required]
+		[Display(Name = "Position")]
 		public virtual String Position { get; set; }
 		[Required]
+		[Display(Name = "Jersey Number")]
 		public virtual short JerseyNumber { get; set; }
 
 		public virtual int TeamId { get; set; }
 
         [JsonIgnore]
-        public virtual Teams Team { get; set; }
+		[Display(Name = "Team")]
+		public virtual Teams Team { get; set; }
 
 	}
 }

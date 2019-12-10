@@ -24,15 +24,18 @@ namespace BlueGeeks.Models
         [Key]
         public virtual int Team_Id { get; set; }
         [Required]
-        public virtual String Team_Name { get; set; }
+		[Display(Name = "Team")]
+		public virtual String Team_Name { get; set; }
         [Required]
-        public virtual String Team_Mascot { get; set; }
+		[Display(Name = "Mascot")]
+		public virtual String Team_Mascot { get; set; }
         [Required]
         public virtual String Conference { get; set; }
         public virtual short Wins { get; set; }
         public virtual short Loses { get; set; }
         public virtual short Ties { get; set; }
-        public virtual short Win_Streak { get; set; }
+		[Display(Name = "Win Streak")]
+		public virtual short Win_Streak { get; set; }
 
     }
 }
