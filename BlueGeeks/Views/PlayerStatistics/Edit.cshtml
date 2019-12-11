@@ -3,74 +3,75 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<div class="bg">
+    <h1>Edit</h1>
 
-<h1>Edit</h1>
-
-<h4>PlayerStatistics</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Player_Statistics_Id" />
-            <div class="form-group">
-                <label asp-for="FgPercent" class="control-label"></label>
-                <input asp-for="FgPercent" class="form-control" />
-                <span asp-validation-for="FgPercent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FtPercent" class="control-label"></label>
-                <input asp-for="FtPercent" class="form-control" />
-                <span asp-validation-for="FtPercent" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ThreePointersMade" class="control-label"></label>
-                <input asp-for="ThreePointersMade" class="form-control" />
-                <span asp-validation-for="ThreePointersMade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PointsMade" class="control-label"></label>
-                <input asp-for="PointsMade" class="form-control" />
-                <span asp-validation-for="PointsMade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Rebounds" class="control-label"></label>
-                <input asp-for="Rebounds" class="form-control" />
-                <span asp-validation-for="Rebounds" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Assists" class="control-label"></label>
-                <input asp-for="Assists" class="form-control" />
-                <span asp-validation-for="Assists" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Steals" class="control-label"></label>
-                <input asp-for="Steals" class="form-control" />
-                <span asp-validation-for="Steals" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Blocks" class="control-label"></label>
-                <input asp-for="Blocks" class="form-control" />
-                <span asp-validation-for="Blocks" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TurnOvers" class="control-label"></label>
-                <input asp-for="TurnOvers" class="form-control" />
-                <span asp-validation-for="TurnOvers" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Player_Id" class="control-label"></label>
-                <select asp-for="Player_Id" class="form-control" asp-items="ViewBag.Player_Id"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <h4>PlayerStatistics</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Player_Statistics_Id" />
+                <div class="form-group">
+                    <label asp-for="FgPercent" class="control-label"></label>
+                    <input asp-for="FgPercent" class="form-control" />
+                    <span asp-validation-for="FgPercent" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FtPercent" class="control-label"></label>
+                    <input asp-for="FtPercent" class="form-control" />
+                    <span asp-validation-for="FtPercent" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ThreePointersMade" class="control-label"></label>
+                    <input asp-for="ThreePointersMade" class="form-control" />
+                    <span asp-validation-for="ThreePointersMade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PointsMade" class="control-label"></label>
+                    <input asp-for="PointsMade" class="form-control" />
+                    <span asp-validation-for="PointsMade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rebounds" class="control-label"></label>
+                    <input asp-for="Rebounds" class="form-control" />
+                    <span asp-validation-for="Rebounds" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Assists" class="control-label"></label>
+                    <input asp-for="Assists" class="form-control" />
+                    <span asp-validation-for="Assists" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Steals" class="control-label"></label>
+                    <input asp-for="Steals" class="form-control" />
+                    <span asp-validation-for="Steals" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Blocks" class="control-label"></label>
+                    <input asp-for="Blocks" class="form-control" />
+                    <span asp-validation-for="Blocks" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TurnOvers" class="control-label"></label>
+                    <input asp-for="TurnOvers" class="form-control" />
+                    <span asp-validation-for="TurnOvers" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Player_Id" class="control-label"></label>
+                    <select asp-for="Player_Id" class="form-control" asp-items="ViewBag.Player_Id"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {

@@ -3,60 +3,61 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<div class="bg">
+    <h1>Edit</h1>
 
-<h1>Edit</h1>
-
-<h4>Teams</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Team_Id" />
-            <div class="form-group">
-                <label asp-for="Team_Name" class="control-label"></label>
-                <input asp-for="Team_Name" class="form-control" />
-                <span asp-validation-for="Team_Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Team_Mascot" class="control-label"></label>
-                <input asp-for="Team_Mascot" class="form-control" />
-                <span asp-validation-for="Team_Mascot" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Conference" class="control-label"></label>
-                <input asp-for="Conference" class="form-control" />
-                <span asp-validation-for="Conference" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Wins" class="control-label"></label>
-                <input asp-for="Wins" class="form-control" />
-                <span asp-validation-for="Wins" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Loses" class="control-label"></label>
-                <input asp-for="Loses" class="form-control" />
-                <span asp-validation-for="Loses" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ties" class="control-label"></label>
-                <input asp-for="Ties" class="form-control" />
-                <span asp-validation-for="Ties" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Win_Streak" class="control-label"></label>
-                <input asp-for="Win_Streak" class="form-control" />
-                <span asp-validation-for="Win_Streak" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <h4>Teams</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Team_Id" />
+                <div class="form-group">
+                    <label asp-for="Team_Name" class="control-label"></label>
+                    <input asp-for="Team_Name" class="form-control" />
+                    <span asp-validation-for="Team_Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Team_Mascot" class="control-label"></label>
+                    <input asp-for="Team_Mascot" class="form-control" />
+                    <span asp-validation-for="Team_Mascot" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Conference" class="control-label"></label>
+                    <input asp-for="Conference" class="form-control" />
+                    <span asp-validation-for="Conference" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Wins" class="control-label"></label>
+                    <input asp-for="Wins" class="form-control" />
+                    <span asp-validation-for="Wins" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Loses" class="control-label"></label>
+                    <input asp-for="Loses" class="form-control" />
+                    <span asp-validation-for="Loses" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ties" class="control-label"></label>
+                    <input asp-for="Ties" class="form-control" />
+                    <span asp-validation-for="Ties" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Win_Streak" class="control-label"></label>
+                    <input asp-for="Win_Streak" class="form-control" />
+                    <span asp-validation-for="Win_Streak" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {

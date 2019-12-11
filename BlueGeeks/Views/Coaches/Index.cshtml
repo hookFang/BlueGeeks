@@ -3,63 +3,62 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div id="Ajax">
-    <h1>Index</h1>
+<div class="bg">
+    <div id="Ajax">
+        <h1>Index</h1>
 
-    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-    {
-        <p>
-            <a asp-action="Create" method="post" data-ajax="true" data-ajax-method="POST" data-ajax-update="#Ajax">Create New</a>
-        </p>
-    }
+        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+        {
+            <p>
+                <a asp-action="Create" method="post" data-ajax="true" data-ajax-method="POST" data-ajax-update="#Ajax">Create New</a>
+            </p>
+        }
 
-    <table class="table" id="coaches">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Team_)
-                </th>
-				<th>
-					Options
-				</th>
-			</tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+        <table class="table" id="coaches">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Team_.Team_Name)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Coaches_Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Coaches_Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Coaches_Id">Delete</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Team_)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Team_.Team_Name)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Coaches_Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Coaches_Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Coaches_Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
 
 @section scripts
